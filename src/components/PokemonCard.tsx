@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 interface PokemonCardProps {
   name: string;
   sprite: string;
@@ -5,6 +7,19 @@ interface PokemonCardProps {
 
 export const PokemonCard = (props: PokemonCardProps): JSX.Element => {
   const { name, sprite } = props;
+  const [loadError, setLoadError] = useState(false);
+
+  const handleLoadError = () => {
+    setLoadError(true);
+  };
+
+  const handleLoadSuccess = () => {
+    setLoadError(false);
+  };
+
+  if (loadError) {
+    return <p>This image could not be loaded.</p>;
+  }
 
   return (
     <div data-testid="pokemon-card-container">
@@ -14,6 +29,8 @@ export const PokemonCard = (props: PokemonCardProps): JSX.Element => {
         data-testid={`pokemon-sprite-${name}`}
         src={sprite}
         alt={`pokemon-sprite-${name}`}
+        onError={handleLoadError}
+        onLoad={handleLoadSuccess}
       />
     </div>
   );
