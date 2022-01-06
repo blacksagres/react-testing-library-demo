@@ -18,7 +18,9 @@ export const PokemonCard = (props: PokemonCardProps): JSX.Element => {
   };
 
   if (loadError) {
-    return <p>This image could not be loaded.</p>;
+    return (
+      <p data-testid="image-load-error">This image could not be loaded.</p>
+    );
   }
 
   return (
