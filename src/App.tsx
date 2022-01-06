@@ -5,7 +5,7 @@ import { SmartPokemonCard } from "./components/SmartPokemonCard";
 function App() {
   return (
     <div className="App">
-      <SmartPokemonCard pokemonName="ditto" />
+      <SmartPokemonCard pokemonName="chikorita" />
     </div>
   );
 }
