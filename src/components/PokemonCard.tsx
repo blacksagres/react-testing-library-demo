@@ -3,19 +3,20 @@ import { getPokemon } from "../api/pokemon.api";
 import { usePokemon } from "../hooks/usePokemon.hook";
 
 interface PokemonCardProps {
-  pokemonName: string;
+  name: string;
+  sprite: string;
 }
 
 export const PokemonCard = (props: PokemonCardProps): JSX.Element => {
-  const { pokemon, loading } = usePokemon(props.pokemonName);
+  const { name, sprite } = props;
 
   return (
     <div data-testid="pokemon-card-container">
-      <h2>{pokemon?.name}</h2>
+      <h2>{name}</h2>
       <img
-        data-testid={`pokemon-sprite-${props.pokemonName}`}
-        src={pokemon?.sprites?.front_default}
-        alt={`pokemon-sprite-${props.pokemonName}`}
+        data-testid={`pokemon-sprite-${name}`}
+        src={sprite}
+        alt={`pokemon-sprite-${name}`}
       />
     </div>
   );

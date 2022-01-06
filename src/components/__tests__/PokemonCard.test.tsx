@@ -6,7 +6,7 @@ import { PokemonCard } from "../PokemonCard";
 import { render, waitFor, screen } from "@testing-library/react";
 
 test("loads and displays ditto", async () => {
-  render(<PokemonCard pokemonName="ditto" />);
+  render(<PokemonCard name="ditto" sprite="image-src" />);
 
   await waitFor(() => screen.getByTestId("pokemon-sprite-ditto"));
 
