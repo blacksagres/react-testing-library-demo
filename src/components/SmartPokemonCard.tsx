@@ -1,5 +1,3 @@
-import { useAsync } from "react-use";
-import { getPokemon } from "../api/pokemon.api";
 import { usePokemon } from "../hooks/usePokemon.hook";
 import { PokemonCard } from "./PokemonCard";
 

@@ -1,12 +1,11 @@
-import { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import { PokemonCard } from "./components/PokemonCard";
+
+import { SmartPokemonCard } from "./components/SmartPokemonCard";
 
 function App() {
   return (
     <div className="App">
-      <PokemonCard pokemonName="ditto" />
+      <SmartPokemonCard pokemonName="ditto" />
     </div>
   );
 }

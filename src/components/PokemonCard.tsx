@@ -1,7 +1,3 @@
-import { useAsync } from "react-use";
-import { getPokemon } from "../api/pokemon.api";
-import { usePokemon } from "../hooks/usePokemon.hook";
-
 interface PokemonCardProps {
   name: string;
   sprite: string;
@@ -12,8 +8,9 @@ export const PokemonCard = (props: PokemonCardProps): JSX.Element => {
 
   return (
     <div data-testid="pokemon-card-container">
-      <h2>{name}</h2>
+      <h2 className="pokemon-card-title">{name}</h2>
       <img
+        className="pokemon-card-image bouncy"
         data-testid={`pokemon-sprite-${name}`}
         src={sprite}
         alt={`pokemon-sprite-${name}`}
