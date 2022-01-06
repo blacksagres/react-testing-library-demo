@@ -6,13 +6,11 @@ import { PokemonCard } from "../PokemonCard";
 import { render, waitFor, screen } from "@testing-library/react";
 
 test("loads and displays ditto", async () => {
-  render(<PokemonCard pokemonName="hello" />);
-
-  // fireEvent.click(screen.getByText("Load Greeting"));
+  render(<PokemonCard pokemonName="ditto" />);
 
   await waitFor(() => screen.getByTestId("pokemon-sprite-ditto"));
 
-  expect(screen.getByTestId("pokemon-sprite-ditto")).toHaveTextContent(
-    "hello there"
+  expect(screen.getByTestId("pokemon-sprite-ditto").getAttribute("alt")).toBe(
+    "pokemon-sprite-ditto"
   );
 });
